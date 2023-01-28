@@ -29,6 +29,9 @@ The paper evaluates three research questions (RQ). A detailed instruction to rep
 2. **RQ2:** This RQ evaluates different reuse scenarios. The detailed instructions can be found [here](/tutorial/evaluate_rq2.md). 
 3. **RQ3:** This RQ evaluates different replace scenarios. The detailed instructions can be found [here](/tutorial/evaluate_rq3.md). 
 
+## DOI of Replication Package
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7578832.svg)](https://doi.org/10.5281/zenodo.7578832)
 
 Please cite the paper as:
 
