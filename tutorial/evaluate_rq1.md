@@ -1,4 +1,4 @@
-## RQ1
+## RQ1 - Decomposition quality
 This paper presents a technique for decomposing a trained RNN model into individual modules, one for each output class. The research question (RQ) evaluated in this paper assesses the effectiveness of this decomposition technique. The RQ measures the impact of decomposition on model accuracy by comparing the accuracy of the composed model using decomposed modules to that of the original monolithic model from which the modules were derived. Additionally, the RQ evaluates the similarity between the decomposed modules and the monolithic model using the Jaccard index. The following steps provide some examples for running experiments to answer this RQ. Please read the [project structure documentation](/tutorial/structure.md) before procedding to run following experiments.
 
 ### Example 1: decompose and evaluate a one to one model with two stacked GRU layers in *rolled* mode
