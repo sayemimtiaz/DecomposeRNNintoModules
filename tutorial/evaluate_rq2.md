@@ -35,4 +35,29 @@ Trained Model Accuracy (Class 0 - Class 2): 0.9973614775725593
 Modularized Accuracy (Class 0 - Class 3): 0.989041095890411
 ... ...
 ```
-Here both accuracy and index ranges from 0 to 1.0.
+Here the accuracy ranges from 0 to 1.0.
+
+### Example 1: evaluate inter-reuse scenario between (one-to-one)-to-(one-to-many) with one LSTM layer 
+In this, case reuse is evaluated between a model of **one-to-one** and **one-to-many** with one LSTM layer. Note that, in this case, we need to combine the vocabulary of both the dataset for *Embedding* layer to work since same input from both the dataset will go to modules from both models. Therefore, a model must be trained with common vocabulary. We have provided a pre-trained model trained with common vocabulary for the convenience. The model is named after *model1_combined.h5*. However, a model from scratch can be trained too using the *model.py* script as described in [RQ1 documentation](/tutorial/evaluate_rq1.md).
+
+Similar to intra-reuse, we must first decompose *model1_combined.h5* in both *lstm_models/one_to_one* and *lstm_models/one_to_many* following the documentation provided for [RQ1](/tutorial/evaluate_rq1.md). Once decomposed, we have to ensure that following variables point to `model1_combined` and `lstm_models` in this script: *reuse/inter/oneOne_oneMany/compare_reuse.py*:
+```
+activation = 'lstm_models'
+modelName = 'model1_combined'
+```
+If it doesn't, please change it to the one you are looking to evaluate inter-reuse on. Once, this basic sanity checking is done, please follow below steps to evaluate it:
+
+1. Open terminal in the root directory of the cloned repository. 
+
+2. Activate the environment:
+```
+source rnnenv/bin/activate
+```
+3. Run following:
+```
+python3 -m reuse.inter.oneOne_oneMany.compare_reuse
+```
+The script will attempt to read and write from directory. Please make sure that it has such permissions. 
+
+4. Depending on the task, it may run for a while. It will print step by step reuse scenarios, which will be saved as a `csv` file in the same directory with name *result_lstm_models_model1_combined.csv*. In every scenario, it will print both module reuse accuracy vs. the accuracy when trained from te scratch in a similar fashion.
+
