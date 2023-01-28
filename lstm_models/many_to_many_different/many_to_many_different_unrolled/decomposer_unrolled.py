@@ -11,14 +11,15 @@ from modularization.concern.concern_identification_encoder_decoder import Concer
 from keras.models import load_model
 
 from data_type.constants import Constants
-from util.common import initModularLayers, calculate_50th_percentile_of_nodes_rolled, getDeadNodePercent
+from util.common import initModularLayers, calculate_50th_percentile_of_nodes_rolled, getDeadNodePercent, \
+    extract_model_name
 
 Constants.disableUnrollMode()
 root = os.path.dirname(os.path.realpath(__file__))
 model_name = os.path.join(root, 'h5', 'model1.h5')
 firstModel = load_model(model_name)
 concernIdentifier = ConcernIdentificationEnDe()
-module_path = os.path.join(root, 'modules')
+module_path = os.path.join(root, 'modules', extract_model_name(model_name))
 
 train_ds, val_ds, test_pairs, \
 source_vectorization, target_vectorization, target_languages = load_tatoeba(sequence_length=20, just_pairs=True)

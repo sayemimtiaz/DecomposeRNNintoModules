@@ -38,7 +38,8 @@ def evaluate_unrolled(model_name):
 
     base_path = os.path.dirname(os.path.realpath(__file__))
 
-    print("Modularized Accuracy: " + str(getModuleAccuracyAnyToOneUnrolled(base_path, model_name, nb_classes, xt, yt)))
+    print("Modularized Accuracy: " + str(getModuleAccuracyAnyToOneUnrolled(base_path,
+                                                                           model_name, nb_classes, xt, yt)))
     # pred = model.predict(xt)
     # pred = pred.argmax(axis=-1)
     # score = accuracy_score(pred, yt)

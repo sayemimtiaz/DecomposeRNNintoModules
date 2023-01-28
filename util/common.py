@@ -485,3 +485,9 @@ def calculate_active_rate_unrolled(observed_values, refLayer):
                     activeCount += 1
 
             refLayer.median_node_val[ts][:, nodeNum] = activeCount / (activeCount + inactiveCount)
+
+
+def extract_model_name(model_path):
+    if model_path.find('/')!=-1:
+        model_path=model_path[model_path.rindex('/')+1:]
+    return model_path[:-3]

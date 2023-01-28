@@ -17,7 +17,7 @@ from evaluation.accuracy_computer import getMonolithicModelAccuracyAnyToMany, ge
 from evaluation.jaccard_computer import findMeanJaccardIndexRolled
 from relu_models.one_to_many.one_to_many_util import loadProcessedDataset, load_toxic_dataset, \
     load_toxic_dataset_combine_math_qa
-from util.common import initModularLayers
+from util.common import initModularLayers, extract_model_name
 
 
 def evaluate_rolled(model_name):
@@ -48,7 +48,8 @@ def evaluate_rolled(model_name):
     #                                                                    yt[:length], skipDummyLabel=True)))
 
     for m in labs:
-        model = load_model(os.path.join(model_path, 'modules', 'module' + str(m) + '.h5'))
+        model = load_model(os.path.join(model_path, 'modules', extract_model_name(model_name),
+                                        'module' + str(m) + '.h5'))
         modelLayers = initModularLayers(model.layers)
         p.append(getModulePredictionAnyToMany(modelLayers, xt[:length],
                                               yt[:length], moduleNo=m))

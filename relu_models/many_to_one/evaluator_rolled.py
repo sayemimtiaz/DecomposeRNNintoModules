@@ -13,7 +13,7 @@ from data_type.constants import Constants
 from evaluation.accuracy_computer import getModulePredictionAnyToOneUnrolled, \
     getMonolithicModelAccuracyAnyToOne
 from evaluation.jaccard_computer import findMeanJaccardIndexRolled
-from util.common import initModularLayers, repopulateModularWeights
+from util.common import initModularLayers, repopulateModularWeights, extract_model_name
 
 
 def evaluate_rolled(model_name):
@@ -37,7 +37,7 @@ def evaluate_rolled(model_name):
     for m in labs:
         # modules1.append(load_model('modules/module' + str(m) + '.h5'))
         modularLayers = initModularLayers(model.layers)
-        repopulateModularWeights(modularLayers, os.path.join(model_path, 'modules'), m)
+        repopulateModularWeights(modularLayers, os.path.join(model_path, 'modules', extract_model_name(model_name)), m)
         modules.append(modularLayers)
 
     finalPred = []

@@ -10,7 +10,8 @@ from modularization.concern.concern_identification_encoder_decoder import Concer
 from keras.models import load_model
 
 from data_type.constants import Constants
-from util.common import initModularLayers, shouldRemove, calculate_50th_percentile_of_nodes_rolled, getDeadNodePercent
+from util.common import initModularLayers, shouldRemove, calculate_50th_percentile_of_nodes_rolled, getDeadNodePercent, \
+    extract_model_name
 
 Constants.disableUnrollMode()
 root = os.path.dirname(os.path.realpath(__file__))
@@ -20,7 +21,7 @@ concernIdentifier = ConcernIdentificationEnDe()
 
 train_ds, val_ds, test_pairs, \
 source_vectorization, target_vectorization, target_languages = load_tatoeba(sequence_length=20, just_pairs=True)
-module_path = os.path.join(root, 'modules')
+module_path = os.path.join(root, 'modules', extract_model_name(model_name))
 
 labs = range(0, len(target_languages))
 print("Start Time:" + datetime.now().strftime("%H:%M:%S"))

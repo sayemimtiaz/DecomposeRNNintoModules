@@ -4,7 +4,7 @@ from keras.models import load_model
 from sklearn.metrics import accuracy_score
 
 from data_type.enums import LayerType
-from util.common import initModularLayers, repopulateModularWeights
+from util.common import initModularLayers, repopulateModularWeights, extract_model_name
 from util.layer_propagator import LayerPropagator
 import numpy as np
 
@@ -144,7 +144,7 @@ def getModulePredictionAnyToOneUnrolled(module, xt, yt, moduleNo=None):
 
 def getModuleAccuracyAnyToOneUnrolled(model_path, model_name, nb_classes, xt, yt):
     model = load_model(os.path.join(model_path, model_name))
-    modulePath = os.path.join(model_path, 'modules')
+    modulePath = os.path.join(model_path, 'modules', extract_model_name(model_name))
     labs = range(0, nb_classes)
 
     modules = []
@@ -209,7 +209,7 @@ def getModulePredictionAnyToOneUnrolledWithMasked(module, xt, yt, moduleNo=None)
 
 def getModuleAccuracyAnyToManyUnrolled(module_path, model_name, nb_classes, xt, yt, timestep):
     model = load_model(model_name)
-    modulePath = os.path.join(module_path, 'modules')
+    modulePath = os.path.join(module_path, 'modules', extract_model_name(model_name))
     labs = range(0, nb_classes)
 
     p = []

@@ -13,7 +13,7 @@ from data_type.constants import Constants
 from evaluation.calculate_bleu import get_bleu
 from evaluation.jaccard_computer import findMeanJaccardIndexUnrolledEnDe
 from relu_models.many_to_many_different.many_to_many_different_rolled.many_to_many_different_util import load_tatoeba, sampleNegative
-from util.common import initModularLayers, repopulateModularWeights
+from util.common import initModularLayers, repopulateModularWeights, extract_model_name
 
 
 def evaluate_unrolled(model_name, num_sample=-1):
@@ -35,7 +35,7 @@ def evaluate_unrolled(model_name, num_sample=-1):
     model = load_model(model_name)
     modelLayers = initModularLayers(model.layers, timestep=timestep)
 
-    module_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'modules')
+    module_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'modules', extract_model_name(model_name))
 
     modules = []
     for m in labs:

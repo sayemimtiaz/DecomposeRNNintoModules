@@ -11,7 +11,7 @@ from keras.models import load_model
 
 from data_type.constants import Constants
 from util.common import initModularLayers, shouldRemove, getDeadNodePercent, \
-    calculate_active_rate_rolled
+    calculate_active_rate_rolled, extract_model_name
 
 Constants.disableUnrollMode()
 root = os.path.dirname(os.path.realpath(__file__))
@@ -19,7 +19,7 @@ model_name = os.path.join(root, 'h5', 'model1.h5')
 
 train_ds, val_ds, test_pairs, \
 source_vectorization, target_vectorization, target_languages = load_tatoeba(sequence_length=20, just_pairs=True)
-module_path = os.path.join(root, 'modules')
+module_path = os.path.join(root, 'modules', extract_model_name(model_name))
 
 model = load_model(model_name)
 concernIdentifier = ConcernIdentificationEnDe()

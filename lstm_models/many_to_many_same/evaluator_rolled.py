@@ -15,7 +15,7 @@ from sklearn.metrics import accuracy_score
 from evaluation.accuracy_computer import getMonolithicModelAccuracyAnyToMany, getModulePredictionAnyToMany
 from evaluation.jaccard_computer import findMeanJaccardIndexRolled
 from relu_models.many_to_many_same.brown_util import sample
-from util.common import initModularLayers
+from util.common import initModularLayers, extract_model_name
 
 
 def evaluate_rolled(model_name):
@@ -42,7 +42,8 @@ def evaluate_rolled(model_name):
 
     p = []
     for m in labs:
-        model = load_model(util.nltk_util.os.path.join(model_path, 'modules', 'module' + str(m) + '.h5'))
+        model = load_model(util.nltk_util.os.path.join(model_path, 'modules',extract_model_name(model_name),
+                                                       'module' + str(m) + '.h5'))
         modelLayers = initModularLayers(model.layers)
         p.append(getModulePredictionAnyToMany(modelLayers, xt[:length], yt[:length], moduleNo=m))
 

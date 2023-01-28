@@ -18,7 +18,7 @@ Constants.enableUnrollMode()
 root = os.path.dirname(os.path.realpath(__file__))
 model_name = os.path.join(root, 'h5', 'model1.h5')
 
-module_path = os.path.join(root, 'modules')
+module_path = os.path.join(root, 'modules', extract_model_name(model_name))
 
 firstModel = load_model(model_name)
 concernIdentifier = ConcernIdentification()

@@ -15,7 +15,7 @@ root = os.path.dirname(os.path.realpath(__file__))
 model_name = os.path.join(root, 'h5', 'model1.h5')
 model = load_model(model_name)
 concernIdentifier = ConcernIdentification()
-module_path = os.path.join(root, 'modules')
+module_path = os.path.join(root, 'modules', extract_model_name(model_name))
 
 x_train, x_test, y_train, y_test, num_words, timestep, nb_classes = \
     load_toxic_dataset(repeat=False, hot_encode=False)

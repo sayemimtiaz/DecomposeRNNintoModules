@@ -5,7 +5,7 @@ import numpy as np
 
 from data_type.enums import LayerType
 from modularization.concern.concern_identification_encoder_decoder import ConcernIdentificationEnDe
-from util.common import initModularLayers, repopulateModularWeights
+from util.common import initModularLayers, repopulateModularWeights, extract_model_name
 
 
 def jaccard_similarity(list1, list2):
@@ -100,7 +100,8 @@ def findMeanJaccardIndexRolled(base_model_path, target_module_path, nb_modules, 
 
     flattenedModuleWeights = []
     for m in labs:
-        module_path = os.path.join(target_module_path, 'modules', 'module' + str(m) + '.h5')
+        module_path = os.path.join(target_module_path, 'modules',extract_model_name(base_model_path),
+                                   'module' + str(m) + '.h5')
         flattenedModuleWeights.append(
             getFlattenedWeightsRolled(module_path, only_decoder=only_decoder, timestep=timestep))
 
@@ -119,7 +120,7 @@ def findMeanJaccardIndexUnrolled(base_model_path, target_module_path, nb_modules
 
     labs = range(0, nb_modules)
 
-    modulePath = os.path.join(target_module_path, 'modules')
+    modulePath = os.path.join(target_module_path, 'modules', extract_model_name(base_model_path))
     jaccard_index = []
 
     for m in labs:

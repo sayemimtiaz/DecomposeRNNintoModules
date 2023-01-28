@@ -11,6 +11,7 @@ import os
 from evaluation.jaccard_computer import findMeanJaccardIndexRolled
 from evaluation.calculate_bleu import get_bleu
 from relu_models.many_to_many_different.many_to_many_different_rolled.many_to_many_different_util import load_tatoeba, sampleNegative
+from util.common import extract_model_name
 
 
 def evaluate_rolled(model_name, num_sample=-1):
@@ -36,7 +37,7 @@ def evaluate_rolled(model_name, num_sample=-1):
                  target_vectorization, timestep)
 
         print('Modularized Model: ')
-        module = load_model('modules/module' + str(m) + '.h5')
+        module = load_model('modules',extract_model_name(model_name), 'module' + str(m) + '.h5')
         get_bleu(module, sampled_data[l], source_vectorization,
                  target_vectorization, timestep)
 
