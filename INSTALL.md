@@ -31,12 +31,3 @@ pip install -r requirements.txt
 ```
 python3 -m lstm_models.one_to_one.decomposer_rolled
 ```
-
-# Project structure
-The structure of this repository has been detailed [here](/tutorial/structure.md).
-
-# Running experiments
-The paper evaluates three research questions (RQ). A detailed instruction to reproduce results for every RQs are listed in following files:
-1. **RQ1:** The quality of the RNN decomposition (in terms of accuracy), similairty between model and modules (in terms of Jaccard index) are evaluated in this RQ.
-2. **RQ2:** This RQ evaluates different reuse scenarios. 
-3. **RQ3:** This RQ evaluates different replace scenarios. 
