@@ -3,9 +3,9 @@
 We apply for the three badges *available*, *functional*, and *reusable*. Here are the reasons why we believe that the artifact deserves the badges.
 
 ### Available
-The artifact is publicly shared in the GitHub repository: `https://github.com/sumonbis/FairPreprocessing.git`.
+The artifact is publicly shared in the GitHub repository: `https://github.com/sayemimtiaz/DecomposeRNNintoModules`.
 Furthermore, a DOI is obtained for the latest release:
-[DOI]([10.57967/hf/0309](https://doi.org/10.57967/hf/0309))
+[DOI](https://doi.org/10.57967/hf/0309)
 
 ### Functional
 We provided detailed instructions for installation, environment setup, and run the benchmark. Furthermore we shared the following necessary components of the artifact:
