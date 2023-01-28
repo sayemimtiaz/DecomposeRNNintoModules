@@ -6,32 +6,24 @@ The specific artifacts included in this repository are listed as follows:
 We have provided all Python scripts for decomposing and evaluating RNN models. We provide a description of important directories/scripts below: 
 
 - *gru_models*: scripts for decomposing *GRU* models and evaluating them. It's organized in the following way:
-	- gru_models/one_to_one: decomposition scripts for *GRU* one to one model.
+	- *gru_models/one_to_one*: decomposition scripts for *GRU* one to one model. This directory in turn contains following contents:
+		- *h5*: This directory includes several pre-trained monolithic models for the user's convenience. These pre-trained models can be used as examples for decomposing the model. This directory contains models in this format: `modelX.h5`, where `X` ranges from 1 to 4. For example, `model2.h5` would mean a GRU one to one model with two stacked GRU layers.
+		- *decomposer_rolled.py*: This is the python script that needs to be executed for decomposing a one to one GRU model from *h5* directory in *rolled* mode. 
+		- *decomposer_unrolled.py*: In addition, this file may exist where it's appropriate. This is the python script that needs to be executed for decomposing a one to one GRU model from *h5* directory in *unrolled* mode. 
+		- *model.py*: This script provides a model defintion to be trained from scratch. 
+	All other model types (i.e., one to many, many to many etc.) follows the similar structure, hence we will skip describing it repetitively.
+	
 	- gru_models/one_to_many: decomposition scripts for *GRU* one to many model.
 	- gru_models/many_to_one: decomposition scripts for *GRU* many to one model.
 	- gru_models/many_to_many_same: decomposition scripts for *GRU* many to many model.
 	- gru_models/many_to_many_different: decomposition scripts for *GRU* many to many(Encoder-Decoder) language model. 
  
-- *lstm_models*: scripts for decomposing *LSTM* models and evaluating them. It's organized in the following way:
-	- lstm_models/one_to_one: decomposition scripts for *LSTM* one to one model.
-	- lstm_models/one_to_many: decomposition scripts for *LSTM* one to many model.
-	- lstm_models/many_to_one: decomposition scripts for *LSTM* many to one model.
-	- lstm_models/many_to_many_same: decomposition scripts for *LSTM* many to many model.
-	- lstm_models/many_to_many_different: decomposition scripts for *LSTM* many to many(Encoder-Decoder) language model.
+- *lstm_models*: scripts for decomposing *LSTM* models and evaluating them. It's organized in a similar way as *gru_models*.
 
-- *vanilla_rnn_models*: scripts for decomposing *Vanilla RNN* models with *Tanh* activation and evaluating them. It's organized in the following way:
-	- vanilla_rnn_models/one_to_one: decomposition scripts for *Vanilla RNN* one to one model.
-	- vanilla_rnn_models/one_to_many: decomposition scripts for *Vanilla RNN* one to many model.
-	- vanilla_rnn_models/many_to_one: decomposition scripts for *Vanilla RNN* many to one model.
-	- vanilla_rnn_models/many_to_many_same: decomposition scripts for *Vanilla RNN* many to many model.
-	- vanilla_rnn_models/many_to_many_different: decomposition scripts for *Vanilla RNN* many to many(Encoder-Decoder) language model.
 
-- *relu_models*: scripts for decomposing *Vanilla RNN* models with *Relu* activation and evaluating them. It's organized in the following way:
-	- relu_models/one_to_one: decomposition scripts for *Vanilla RNN* one to one model.
-	- relu_models/one_to_many: decomposition scripts for *Vanilla RNN* one to many model.
-	- relu_models/many_to_one: decomposition scripts for *Vanilla RNN* many to one model.
-	- relu_models/many_to_many_same: decomposition scripts for *Vanilla RNN* many to many model.
-	- relu_models/many_to_many_different: decomposition scripts for *Vanilla RNN* many to many(Encoder-Decoder) language model.
+- *vanilla_rnn_models*: scripts for decomposing *Vanilla RNN* models with *Tanh* activation and evaluating them. It's organized in a similar way as *gru_models*.
+
+- *relu_models*: scripts for decomposing *Vanilla RNN* models with *Relu* activation and evaluating them. It's organized in a similar way as *gru_models*.
 
 - *reuse*: Scripts for evaluating RQ2: Reusability.
 
@@ -42,7 +34,8 @@ We have provided all Python scripts for decomposing and evaluating RNN models. W
 - All other directories are helper scripts required to run these experiments.
 
 
-## Results: The [results directory](/results) contains all the results. Results are organized in following ways:
+## Results: 
+The [results directory](/results) contains all the results. Results are organized in following ways:
 
 1. results/{X}: Results for RNN variant X, X={Vanilla RNN, LSTM, GRU}
 2. results/X/rq1: Results for RQ1
