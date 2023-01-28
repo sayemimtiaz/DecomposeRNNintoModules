@@ -5,7 +5,7 @@ We apply for the three badges **available**, **functional**, and **reusable**. H
 ### Available
 The artifact is publicly shared in the GitHub repository: `https://github.com/sayemimtiaz/DecomposeRNNintoModules`.
 Furthermore, a DOI is obtained for the latest release:
-[DOI](https://doi.org/10.57967/hf/0309)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7578832.svg)](https://doi.org/10.5281/zenodo.7578832)
 
 ### Functional
 We provided detailed instructions for installation, environment setup, and run the benchmark. Furthermore we shared the following necessary components of the artifact:
