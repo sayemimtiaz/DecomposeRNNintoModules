@@ -1,58 +1,42 @@
-## RQ1
-This paper presents a technique for decomposing a trained RNN model into individual modules, one for each output class. The research question (RQ) evaluated in this paper assesses the effectiveness of this decomposition technique. The RQ measures the impact of decomposition on model accuracy by comparing the accuracy of the composed model using decomposed modules to that of the original monolithic model from which the modules were derived. Additionally, the RQ evaluates the similarity between the decomposed modules and the monolithic model using the Jaccard index. The following steps provide some examples for running experiments to answer this RQ. Please read the [project structure documentation](/tutorial/structure.md) before procedding to run following experiments.
+## Disclaimer
+This project has been tested on an Intel-based Mac OS using Python 3.7. We highly recommend using a similar setup for optimal performance. Additionally, to ensure a clean and isolated environment, we suggest utilizing a virtual Python environment. This tutorial will guide you through the setup process, including the creation of a virtual environment.
 
-### Example 1: decompose and evaluate a one to one model with two stacked GRU layers in *rolled* mode
-To decompose and evaluate such a model, first, we need to ensure that such already trained model exists. For this case, we will have to check that `model2.h5` exists in the directory *gru_models/one_to_one/h5*. If not, it can be trained via `model.py` script, provided in *gru_models/one_to_one* directory. Furthermore, we have to ensure that following variable points to `model2.h5` in this script: *gru_models/one_to_one/decomposer_rolled.py*:
+# Installation and Usage
+
+This tutorial assumes a Python 3.7 or 3.8 is installed in the user system. Additionally, the project requires several packages which are listed in the [requirements.txt](/requirements.txt) file.  In the following steps, we will provide a detailed guide on how to set up a virtual environment and install the necessary packages for running the project:
+
+1. Clone the repository in your local system.
 ```
-model_name = os.path.join(root, 'h5', 'model2.h5')
+git clone https://github.com/sayemimtiaz/DecomposeRNNintoModules.git
 ```
-If it doesn't, please change it to the one you are looking to decompose. Once, this basic sanity checking is done, please follow below steps to decompose and evaluate it:
 
-1. Open terminal in the root directory of the cloned repository. 
+2. Open terminal in the root directory of the cloned repository. 
 
-2. Activate the environment:
+3. Create a virtual ennvironment. Run on command line (all commands are written assuming a bash terminal):
+```
+python3 -m venv rnnenv
+```
+4. Activate the environment:
 ```
 source rnnenv/bin/activate
 ```
-3. Run following:
-```
-python3 -m gru_models.one_to_one.decomposer_rolled
-```
-The script will attempt to read and write from directory. Please make sure that it has such permissions. 
+ You can exit this virtual environment by `deactivate`.
 
-4. Depending on the task, it may run for a while. Usually *rolled* mode will run faster than *unrolled* mode. It will print step by step module generation, which will be saved in: *gru_models/one_to_one/modules* directory. In the end, it will show the accuracy of both monloithic model and modularized model, including jaccard index. A sample output will look like: 
+5. Install required packages:
 ```
-Start Time:22:52:37
-#Module 0 in progress....
-#Module 1 in progress....
-#Module 2 in progress....
-#Module 3 in progress....
-#Module 4 in progress....
-#Module 5 in progress....
-evaluating rolled: /Users/sayem/Documents/Research/RNN/DecomposeRNNintoModules/lstm_models/one_to_one/h5/model1.h5
-Modularized Accuracy: 0.9715242881072027
-Model Accuracy: 0.9701842546063651
-mean jaccard index: 0.6620745716232255
+pip install -r requirements.txt
 ```
-Here both accuracy and index ranges from 0 to 1.0.
 
-### Example 2: decompose and evaluate a many to one model with one LSTM layers in *unrolled* mode
-To decompose and evaluate such a model, first, we need to ensure that such already trained model exists. For this case, we will have to check that `model1.h5` exists in the directory *lstm_models/many_to_one/h5*. If not, it can be trained via `model.py` script, provided in *lstm_models/many_to_one* directory. Furthermore, we have to ensure that following variable points to `model1.h5` in this script: *lstm_models/many_to_one/decomposer_unrolled.py*:
+6. Test the installation by running any script within project. For instance, following will decompose a LSTM model, showing modularized accuracy, model accuracy, and jaccard index as a final summary of the run:
 ```
-model_name = os.path.join(root, 'h5', 'model1.h5')
+python3 -m lstm_models.one_to_one.decomposer_rolled
 ```
-If it doesn't, please change it to the one you are looking to decompose. Once, this basic sanity checking is done, please follow below steps to decompose and evaluate it:
 
-1. Open terminal in the root directory of the cloned repository. 
+# Project structure
+The structure of this repository has been detailed [here](/tutorial/structure.md).
 
-2. Activate the environment:
-```
-source rnnenv/bin/activate
-```
-3. Run following:
-```
-python3 -m lstm_models.many_to_one.decomposer_unrolled
-```
-The script will attempt to read and write from directory. Please make sure that it has such permissions. 
-
-4. It will generate similar output as shown above.
+# Running experiments
+The paper evaluates three research questions (RQ). A detailed instruction to reproduce results for every RQs are listed in following files:
+1. **RQ1:** The quality of the RNN decomposition (in terms of accuracy), similairty between model and modules (in terms of Jaccard index) are evaluated in this RQ.
+2. **RQ2:** This RQ evaluates different reuse scenarios. 
+3. **RQ3:** This RQ evaluates different replace scenarios. 
