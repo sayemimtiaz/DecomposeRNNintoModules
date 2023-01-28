@@ -13,7 +13,7 @@ Modularity and decomposition are central ideas in software engineering that enab
 
 
 
-This repository exposes all the code, data, and instrcutions to reproduce the resukts presented in the paper.
+This repository exposes all the code, data, and instrcutions to reproduce the results presented in the paper.
 
 ## Project structure
 The structure of this repository has been detailed [here](/tutorial/structure.md).
