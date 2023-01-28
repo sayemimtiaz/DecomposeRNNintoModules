@@ -56,3 +56,22 @@ python3 -m lstm_models.many_to_one.decomposer_unrolled
 The script will attempt to read and write from directory. Please make sure that it has such permissions. 
 
 4. It will generate similar output as shown above.
+
+### Example 3: decompose and evaluate a many to many language model with three LSTM layers in *rolled* mode
+First, please download the corresponding pre-trained langauge model fron [here](https://doi.org/10.57967/hf/0307). For this example, we would want to have this downloaded model (*language_models/lstm/rq1 models/model_LSTM_3layer.h5*) placed inside *lstm_models/many_to_many_different/many_to_many_different_rolled/h5* directory in the cloned repository. Furthermore, one can train a language model from script provided [there](https://doi.org/10.57967/hf/0307). In the next step, we have to ensure that following variable points to `model_LSTM_3layer.h5` in this script: *lstm_models/many_to_many_different/many_to_many_different_rolled/decomposer_rolled.py*:
+```
+model_name = os.path.join(root, 'h5', 'model_LSTM_3layer.h5')
+```
+If it doesn't, please change it to the one you are looking to decompose. Once, this basic sanity checking is done, please follow below steps to decompose and evaluate it:
+
+1. Open terminal in the root directory of the cloned repository. 
+
+2. Activate the environment:
+```
+source rnnenv/bin/activate
+```
+3. Run following:
+```
+python3 -m lstm_models.many_to_many_different.many_to_many_different_rolled.decomposer_rolled
+```
+4. It will generate similar output as shown above. Similarly, other language models can be decomposed too.
