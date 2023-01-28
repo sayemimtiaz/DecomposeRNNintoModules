@@ -118,6 +118,6 @@ for j in labs:
             model.layers[layerNo].set_weights([_layer.DW, _layer.DB])
             getDeadNodePercent(_layer)
 
-    model.save('modules/module' + str(j) + '.h5')
+    model.save(os.path.join(module_path,'module' + str(j) + '.h5'))
 
 evaluate_rolled(model_name, 500)
