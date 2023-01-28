@@ -1,7 +1,9 @@
-## Disclaimer
-This project has been tested on an Intel-based Mac OS using Python 3.7. We highly recommend using a similar setup for optimal performance. Additionally, to ensure a clean and isolated environment, we suggest utilizing a virtual Python environment. This tutorial will guide you through the setup process, including the creation of a virtual environment.
+## RQ1
+This paper presents a technique for decomposing a trained RNN model into individual modules, one for each output class. The research question (RQ) evaluated in this paper assesses the effectiveness of this decomposition technique. The RQ measures the impact of decomposition on model accuracy by comparing the accuracy of the composed model using decomposed modules to that of the original monolithic model from which the modules were derived. Additionally, the RQ evaluates the similarity between the decomposed modules and the monolithic model using the Jaccard index. The following steps provide some examples for running experiments to answer this RQ.
 
-# Installation and Usage
+### preliminaries 
+
+## Decompose a
 
 This tutorial assumes a Python 3.7 or 3.8 is installed in the user system. Additionally, the project requires several packages which are listed in the [requirements.txt](/requirements.txt) file.  In the following steps, we will provide a detailed guide on how to set up a virtual environment and install the necessary packages for running the project:
 
