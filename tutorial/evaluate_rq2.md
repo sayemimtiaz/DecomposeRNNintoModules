@@ -37,7 +37,7 @@ Modularized Accuracy (Class 0 - Class 3): 0.989041095890411
 ```
 Here the accuracy ranges from 0 to 1.0.
 
-### Example 1: evaluate inter-reuse scenario between (one-to-one)-to-(one-to-many) with one LSTM layer 
+### Example 2: evaluate inter-reuse scenario between (one-to-one)-to-(one-to-many) with one LSTM layer 
 In this, case reuse is evaluated between a model of **one-to-one** and **one-to-many** with one LSTM layer. Note that, in this case, we need to combine the vocabulary of both the dataset for *Embedding* layer to work since same input from both the dataset will go to modules from both models. Therefore, a model must be trained with common vocabulary. We have provided a pre-trained model trained with common vocabulary for the convenience. The model is named after *model1_combined.h5*. However, a model from scratch can be trained too using the *model.py* script as described in [RQ1 documentation](/tutorial/evaluate_rq1.md).
 
 Similar to intra-reuse, we must first decompose *model1_combined.h5* in both *lstm_models/one_to_one* and *lstm_models/one_to_many* following the documentation provided for [RQ1](/tutorial/evaluate_rq1.md). Once decomposed, we have to ensure that following variables point to `model1_combined` and `lstm_models` in this script: *reuse/inter/oneOne_oneMany/compare_reuse.py*:
