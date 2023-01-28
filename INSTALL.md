@@ -12,17 +12,22 @@ git clone https://github.com/sayemimtiaz/DecomposeRNNintoModules.git
 
 2. Open terminal in the root directory of the cloned repository. 
 
-4. Create a virtual ennvironment. Run on command line (all commands are written assuming a bash terminal):
+3. Create a virtual ennvironment. Run on command line (all commands are written assuming a bash terminal):
 ```
 python3 -m venv rnnenv
 ```
-5. Activate the environment:
+4. Activate the environment:
 ```
 source rnnenv/bin/activate
 ```
-You can exit this virtual environment by `deactivate`.
+ You can exit this virtual environment by `deactivate`.
 
-4. Install required packages:
+5. Install required packages:
 ```
 pip install -r requirements.txt
+```
+
+6. Test the installation by running any script within project. For instance, following will decompose a LSTM model, showing modularized accuracy, model accuracy, and jaccard index as a final summary of the run:
+```
+python3 -m lstm_models.one_to_one.decomposer_rolled
 ```
