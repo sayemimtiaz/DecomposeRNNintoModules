@@ -33,7 +33,7 @@ python3 -m lstm_models.one_to_one.decomposer_rolled
 ```
 
 # Project structure
-The structure of this repository has been detailed [here](/tutorial/structure.MD).
+The structure of this repository has been detailed [here](/tutorial/structure.md).
 
 # Running experiments
 The paper evaluates three research questions (RQ). A detailed instruction to reproduce results for every RQs are listed in following files:
