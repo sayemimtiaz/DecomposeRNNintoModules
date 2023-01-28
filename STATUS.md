@@ -1,6 +1,6 @@
 # Badges
 
-We apply for the three badges *available*, *functional*, and *reusable*. Here are the reasons why we believe that the artifact deserves the badges.
+We apply for the three badges **available**, **functional**, and **reusable**. Here are the reasons why we believe that the artifact deserves the badges.
 
 ### Available
 The artifact is publicly shared in the GitHub repository: `https://github.com/sayemimtiaz/DecomposeRNNintoModules`.
@@ -11,7 +11,6 @@ Furthermore, a DOI is obtained for the latest release:
 We provided detailed instructions for installation, environment setup, and run the benchmark. Furthermore we shared the following necessary components of the artifact:
 
 * We shared all the datasets to run the machine learning tasks.
-* The runable benchmark is shared.
 * All the code for implementing the approach are shared.
 * All our experiments are functional, which automatically produces results in CSV files and console.
 
