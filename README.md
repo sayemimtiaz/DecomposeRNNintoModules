@@ -11,7 +11,7 @@ The structure of this repository has been detailed [here](/tutorial/structure.md
 
 ## Installation and Usage
 
-Please follow this [docmentation](/INSTALL.md) to install the system and make it runnable.
+Please follow this [documentation](/INSTALL.md) to install the system and make it runnable.
 
 
 ## Running experiments
