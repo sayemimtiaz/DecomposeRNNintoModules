@@ -43,7 +43,7 @@ Here the accuracy ranges from 0 to 1.0.
 Please see the inter-reuse example described for [RQ2](/tutorial/evaluate_rq2.md) first as both are similar in experimental setup.
 For this example, we want to replace modules of a faulty model from **many-to-one** with a module from best model in **many-to-many-same**. Let's assume, in both cases, **model1_combined.h5** is the responsible party. In other words, **lstm_models/many_to_one/h5/model1_combined.h5** performs poorly for **many-to-one** and **lstm_models/many_to_many_same/h5/model1_combined.h5** performs best for **many-to-many-same**. 
 
-Similar to intrer-reuse, we must first decompose *model1_combined.h5* in both **lstm_models/many_to_one** and **lstm_models/many_to_many_same** following the documentation provided for [RQ1](/tutorial/evaluate_rq1.md). Please decompsoe both in *unrolled* mode. 
+Similar to inter-reuse, we must first decompose *model1_combined.h5* in both **lstm_models/many_to_one** and **lstm_models/many_to_many_same** following the documentation provided for [RQ1](/tutorial/evaluate_rq1.md). Please decompose both in *unrolled* mode. 
 
 Once decomposed, we have to ensure that following variables point to `model1_combined` and `lstm_models` in this script: *replace/inter/manyMany_manyOne/compare_replace.py*:
 ```
@@ -65,5 +65,5 @@ python3 -m replace.inter.manyMany_manyOne.compare_replace
 ```
 The script will attempt to read and write from directory. Please make sure that it has such permissions. 
 
-4. Depending on the task, it may run for a while. It will print step by step replace results, which will be saved as a `csv` file in the same directory with name *result_lstm_models_model1_combined.csv*. In every scenario, it will print the module accuracy afetr replacement.
+4. Depending on the task, it may run for a while. It will print step by step replace results, which will be saved as a `csv` file in the same directory with name *result_lstm_models_model1_combined.csv*. In every scenario, it will print the module accuracy after replacement.
 
