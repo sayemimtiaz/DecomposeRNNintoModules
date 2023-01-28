@@ -20,7 +20,7 @@ python3 -m gru_models.one_to_one.decomposer_rolled
 ```
 The script will attempt to read and write from directory. Please make sure that it has such permissions. 
 
-4. Depending on the task, it may run for a while. Usually *rolled* mode will run faster than *unrolled* mode. It will print step by step module generation, which will be saved in: *gru_models/one_to_one/modules* directory. In the end, it will show the accuracy of both monloithic model and modularized model, including jaccard index. A sample output will look like: 
+4. Depending on the task, it may run for a while. Usually *rolled* mode will run faster than *unrolled* mode. It will print step by step module generation, which will be saved in: *gru_models/one_to_one/modules* directory. In the end, it will show the accuracy of both monolithic model and modularized model, including jaccard index. A sample output will look like: 
 ```
 Start Time:22:52:37
 #Module 0 in progress....
