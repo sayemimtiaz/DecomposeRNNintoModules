@@ -1,0 +1,15 @@
+Original,,,,,
+,Monlolithic,,,,
+UA,37.42,,,,
+IT,31.63,,,,
+DE,29.84,,,,
+FR,27.63,,31.63,,
+,,,,,
+Solution 1,,,,,
+,Monlolithic,Modularized,JI,,
+DE,17.28,16.96,0.68,,
+UA,32.23,32.45,,,29.0425
+,,,,,
+Solution 2,,,,,
+,Monlolithic,Modularized,JI,,
+UA,33.47,33.49,0.69,,29.3025

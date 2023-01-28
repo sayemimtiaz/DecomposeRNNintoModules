@@ -1,0 +1,14 @@
+Original,,,,,
+,Monlolithic,Modularized,,,
+EN,30.59,,,,
+IT,35.38,,,,
+DE,31.05,,32.34,,
+,,,,,
+Solution 1,,,,,
+,Monlolithic,Modularized,JI,,
+EN,32.09,32.31,0.68,,
+IT,31.71,31.72,,,32.71666667
+,,,,,
+Solution 2,,,,,
+,Monlolithic,Modularized,JI,,
+EN,32.08,31.22,0.67,,32.55

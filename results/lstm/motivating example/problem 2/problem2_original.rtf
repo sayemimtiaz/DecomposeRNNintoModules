@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red22\green21\blue22;\red246\green246\blue246;}
+{\*\expandedcolortbl;;\cssrgb\c11373\c10980\c11373;\cssrgb\c97255\c97255\c97255;}
+\margl1440\margr1440\vieww9680\viewh6580\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs30 \cf2 \cb3 \expnd0\expndtw0\kerning0
+/usr/local/bin/python3.9 /Users/PycharmProjects/RNNDecomposition/motivating_example/problem2/original/decomposer_tanh.py\
+2022-08-04 13:03:23.182833: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA\
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.\
+('Ma v\'f5tsin selle raamatu.', '[startde] Ich nahm das Buch. [endde]')\
+2022-08-04 13:03:41.519443: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)\
+2022-08-04 13:04:02.090142: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.\
+#Module en in progress....\
+Positive data loaded: 803\
+Negative data loaded: 1000\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+#Module de in progress....\
+Positive data loaded: 824\
+Negative data loaded: 1000\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+#Module it in progress....\
+Positive data loaded: 795\
+Negative data loaded: 1000\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+Dead Node in LayerType.LSTM:\
+Dead node: 5.078125%\
+('K\'f5ik naeratavad pildil.', '[startde] Alle auf der Fotografie l\'e4cheln. [endde]')\
+Bleu Score: (en-en): \
+Monolithic Model: \
+\{'1-grams': 0.14946625842429223, '1-2-grams': 3.867394310600207e-155, '1-3-grams': 8.276260030733595e-186, '1-4-grams': 6.220941243774368e-232\}\
+Modularized Model: \
+\{'1-grams': 0.14122210645327757, '1-2-grams': 3.568719848029974e-155, '1-3-grams': 7.565226263649821e-186, '1-4-grams': 5.673059543285154e-232\}\
+\
+\
+Bleu Score: (en-de): \
+Monolithic Model: \
+\{'1-grams': 0.12371616661748229, '1-2-grams': 3.5275550435559e-155, '1-3-grams': 7.847987339547887e-186, '1-4-grams': 5.956586753257034e-232\}\
+Modularized Model: \
+\{'1-grams': 0.11870191072446881, '1-2-grams': 3.3021445963383543e-155, '1-3-grams': 7.2743969174345404e-186, '1-4-grams': 5.507636569076034e-232\}\
+\
+\
+Bleu Score: (en-it): \
+Monolithic Model: \
+\{'1-grams': 0.24399827063456775, '1-2-grams': 5.039272958762686e-155, '1-3-grams': 9.85430259388314e-186, '1-4-grams': 7.241998833994585e-232\}\
+Modularized Model: \
+\{'1-grams': 0.25136553543652373, '1-2-grams': 5.1588391193898965e-155, '1-3-grams': 1.0062735153536713e-185, '1-4-grams': 7.390521943892598e-232\}\
+\
+\
+mean jaccard index: 0.7527071850271548\
+\
+Process finished with exit code 0\
+}

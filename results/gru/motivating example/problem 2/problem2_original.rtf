@@ -1,0 +1,71 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww51000\viewh25480\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /usr/local/bin/python3.10 /Users/PycharmProjects/RNNDecomposition/motivating_example/problem2/original/decomposer_tanh.py \
+2022-08-26 16:15:39.115970: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA\
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.\
+('Kes teda teavad, neile ta meeldib.', '[startit] Coloro che lo conoscono lo apprezzano. [endit]')\
+2022-08-26 16:15:49.250982: W tensorflow/python/util/util.cc:368] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.\
+#Module en in progress....\
+Positive data loaded: 803\
+Negative data loaded: 1000\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+#Module de in progress....\
+Positive data loaded: 824\
+Negative data loaded: 1000\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+#Module it in progress....\
+Positive data loaded: 795\
+Negative data loaded: 1000\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+Dead Node in LayerType.GRU:\
+Dead node: 5.078125%\
+('K\'f5ik naeratavad pildil.', '[startde] Alle auf der Fotografie l\'e4cheln. [endde]')\
+Bleu Score: (en-en): \
+Monolithic Model: \
+\{'1-grams': 0.19871048147919665, '1-2-grams': 6.1245726614783686e-155, '1-3-grams': 1.4056699302868114e-185, '1-4-grams': 1.0752347689357403e-231\}\
+Modularized Model: \
+\{'1-grams': 0.19370480005718868, '1-2-grams': 5.950875531221729e-155, '1-3-grams': 1.3640259009203538e-185, '1-4-grams': 1.043040347923083e-231\}\
+\
+\
+Bleu Score: (en-de): \
+Monolithic Model: \
+\{'1-grams': 0.24553706389680716, '1-2-grams': 6.852093747588487e-155, '1-3-grams': 1.5113719166994643e-185, '1-4-grams': 1.1446597585681997e-231\}\
+Modularized Model: \
+\{'1-grams': 0.15249388977307776, '1-2-grams': 5.381884324025295e-155, '1-3-grams': 1.3039852606670308e-185, '1-4-grams': 1.0110562478419466e-231\}\
+\
+\
+Bleu Score: (en-it): \
+Monolithic Model: \
+\{'1-grams': 0.30176943442180904, '1-2-grams': 8.029013062093996e-155, '1-3-grams': 1.73749069536658e-185, '1-4-grams': 1.3096511306877728e-231\}\
+Modularized Model: \
+\{'1-grams': 0.17370714767659107, '1-2-grams': 5.918883719900249e-155, '1-3-grams': 1.4140807574857819e-185, '1-4-grams': 1.0925740155262006e-231\}\
+\
+\
+mean jaccard index: 0.7824065940948284\
+\
+Process finished with exit code 0\
+}
