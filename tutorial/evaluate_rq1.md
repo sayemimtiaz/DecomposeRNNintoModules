@@ -1,6 +1,14 @@
 ## RQ1 - Decomposition quality
 This paper presents a technique for decomposing a trained RNN model into individual modules, one for each output class. The research question (RQ) evaluated in this paper assesses the effectiveness of this decomposition technique. The RQ measures the impact of decomposition on model accuracy by comparing the accuracy of the composed model using decomposed modules to that of the original monolithic model from which the modules were derived. Additionally, the RQ evaluates the similarity between the decomposed modules and the monolithic model using the Jaccard index. The following steps provide some examples for running experiments to answer this RQ. Please read the [project structure documentation](/tutorial/structure.md) before running the following experiments.
 
+## General instructions
+To decompose an RNN model, the below steps, in general, will have to be followed:
+1. A model to be decomposed must already be trained and placed in the `{X}\{Y}\h5` directory where **X refers to either of lstm_models, gru_models, vanilla_rnn_models, or relu_models**, and **Y refers to different input-output architectures, such as one_to_one, many_to_one, one_to_many, many_to_many_same, and many_to_many_different**. For the user's convenience, pre-trained models are already provided in each *h5* directory.
+2. Each model can be trained in two modes: *rolled* and *unrolled* except for *one-to-one* models, which can only be decomposed in *rolled* mode.
+3. To decompose in a *rolled* mode, open the terminal in the root directory of the cloned repository and type: `python3 -m {X}.{Y}.decomposer_rolled` (See above for the meaning of *X* and *Y*)
+4. To decompose in an *unrolled* mode, open the terminal in the root directory of the cloned repository and type: `python3 -m {X}.{Y}.decomposer_unrolled` (See above for the meaning of *X* and *Y*)
+
+
 ### Example 1: decompose and evaluate a one-to-one model with two stacked GRU layers in *rolled* mode
 To decompose and evaluate such a model, we first need to ensure that such an already trained model exists. For this case, we will have to check that `model2.h5` exists in the directory *gru_models/one_to_one/h5*. If not, it can be trained via the `model.py` script provided in the *gru_models/one_to_one* directory. Furthermore, we have to ensure that the following variable points to `model2.h5` in this script: *gru_models/one_to_one/decomposer_rolled.py*:
 ```
