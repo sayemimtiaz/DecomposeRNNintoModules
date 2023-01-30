@@ -1,19 +1,20 @@
-# DecomposeRNNintoModules
-**Title** Decomposing a Recurrent Neural Network into Modules for Enabling Reusability and Replacement
+# Decompose a RNN model into modules
+**Title:** Decomposing a Recurrent Neural Network into Modules for Enabling Reusability and Replacement
 
-**Authors** Sayem Mohammad Imtiaz, Fraol Batole, Astha Singh, Rangeet Pan, Breno Dantas Cruz, and Hridesh Rajan
+**Authors:** Sayem Mohammad Imtiaz, Fraol Batole, Astha Singh, Rangeet Pan, Breno Dantas Cruz, and Hridesh Rajan
 
-**PDF** https://arxiv.org/pdf/2212.05970.pdf
+**PDF:** https://arxiv.org/pdf/2212.05970.pdf
+
 
 Modularity and decomposition are central ideas in software engineering that enable better software evolution. One of the important benefits of decomposing software into modules is the ability to reassemble and replace modules flexibly. This paper proposes an approach to decompose a trained model into modules to enable such benefits for recurrent neural networks. In particular, it introduces a method for breaking down a trained RNN model into separate modules, one for each output class. The research question evaluated in this paper examines the efficacy of this decomposition technique and its applicability in various scenarios. In particular, the paper asks three research questions: 
-- **RQ1 - Decomposition Quality**: Does decomposing RNN model into modules incur cost?
+- **RQ1 - Decomposition quality**: Does decomposing the RNN model into modules incur cost?
 - **RQ2 - Reusability**: Can Decomposed Modules be Reused to Create a New Problem?
 - **RQ3 - Replaceability**: Can Decomposed Modules be Replaced?
 
 
 
 
-This repository exposes all the code, data, and instrcutions to reproduce the results presented in the paper.
+This repository exposes all the code, data, and instructions to reproduce the results presented in the paper.
 
 ## Project structure
 The structure of this repository has been detailed [here](/tutorial/structure.md).
@@ -24,10 +25,10 @@ Please follow this [documentation](/INSTALL.md) to install the system and make i
 
 
 ## Running experiments
-The paper evaluates three research questions (RQ). A detailed instruction to reproduce results for every RQs are listed in following files:
-1. **RQ1:** The quality of the RNN decomposition (in terms of accuracy), similairty between model and modules (in terms of Jaccard index) are evaluated in this RQ. The detailed instructions can be found [here](/tutorial/evaluate_rq1.md). 
+The paper evaluates three research questions (RQ). Detailed instruction to reproduce results for every RQs are listed in the following files:
+1. **RQ1:** The quality of the RNN decomposition (in terms of accuracy), and the similarity between the model and modules (in terms of Jaccard index) are evaluated in this RQ. The detailed instructions can be found [here](/tutorial/evaluate_rq1.md). 
 2. **RQ2:** This RQ evaluates different reuse scenarios. The detailed instructions can be found [here](/tutorial/evaluate_rq2.md). 
-3. **RQ3:** This RQ evaluates different replace scenarios. The detailed instructions can be found [here](/tutorial/evaluate_rq3.md). 
+3. **RQ3:** This RQ evaluates different replacement scenarios. The detailed instructions can be found [here](/tutorial/evaluate_rq3.md). 
 
 ## DOI of Replication Package
 
