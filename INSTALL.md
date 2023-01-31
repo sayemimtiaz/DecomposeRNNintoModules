@@ -11,9 +11,6 @@ git clone https://github.com/sayemimtiaz/DecomposeRNNintoModules.git
 ```
 
 2. Open terminal in the root directory of the cloned repository. 
-```
-cd DecomposeRNNintoModules
-```
 
 3. Create a virtual ennvironment. Run on command line (all commands are written assuming a bash terminal):
 ```
