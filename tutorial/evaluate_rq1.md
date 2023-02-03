@@ -4,7 +4,7 @@ This paper presents a technique for decomposing a trained RNN model into individ
 ## General instructions
 To decompose an RNN model, the below steps, in general, will have to be followed:
 1. A model to be decomposed must already be trained and placed in the `{X}\{Y}\h5` directory where **X refers to either of lstm_models, gru_models, vanilla_rnn_models, or relu_models**, and **Y refers to different input-output architectures, such as one_to_one, many_to_one, one_to_many, many_to_many_same, and many_to_many_different**. For the user's convenience, pre-trained models are already provided in each *h5* directory.
-2. Each model can be trained in two modes: *rolled* and *unrolled* except for *one-to-one* models, which can only be decomposed in *rolled* mode.
+2. Each model can be decomposed in two modes: *rolled* and *unrolled* except for *one-to-one* models, which can only be decomposed in *rolled* mode.
 3. To decompose in a *rolled* mode, open the terminal in the root directory of the cloned repository and type: `python3 -m {X}.{Y}.decomposer_rolled` (See above for the meaning of *X* and *Y*)
 4. To decompose in an *unrolled* mode, open the terminal in the root directory of the cloned repository and type: `python3 -m {X}.{Y}.decomposer_unrolled` (See above for the meaning of *X* and *Y*)
 
