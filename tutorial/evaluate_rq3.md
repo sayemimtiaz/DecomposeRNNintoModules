@@ -17,7 +17,8 @@ To evaluate the replacement scenarios, the below steps should be followed in gen
   - **many-to-many-different**: It should be decomposed in *rolled* mode.
 In our experiment, we found those modes to be the best performing. Hence the replacement evaluation is done on modules decomposed in the best mode.
 
-- Once the target model(s) is decomposed, to evaluate **intra-replace**, `compare_replace` script should be executed with this command: `python3 -m replace.intra.{X}.compare_replace` and, for **inter-replace**, run: `python3 -m replace.inter.{X}.compare_replace`, where *X refers to different input-output architectures, such as one_to_one, many_to_one, one_to_many, many_to_many_same, and many_to_many_different*. 
+- Once the target model(s) is decomposed, to evaluate **intra-replace**, `compare_replace` script should be executed with this command: `python3 -m replace.intra.{X}.compare_replace`, where *X refers to different input-output architectures, such as one_to_one, many_to_one, one_to_many, many_to_many_same, and many_to_many_different*. 
+- - For **inter-replace**, run: `python3 -m replace.inter.{Z}.compare_replace`, where *Z refers to oneOne_oneMany, and manyOne_manyMany*. Here, *oneOne_oneMany* indicates that modules are replaced between *one-to-one* and *one-to-many* model, and *many-to-one* and *many-to-many-same* for *manyOne_manyMany*. 
 - Before running the `compare_replace` script, the following variables should be checked to ensure the intended model is being evaluated:
 ```
 activation = '{X}' #X = {gru_models, lstm_models, vanilla_rnn_models, relu_models}
