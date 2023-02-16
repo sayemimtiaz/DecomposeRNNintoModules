@@ -1,5 +1,5 @@
 ## Disclaimer
-This project has been tested on an Intel-based Mac OS using Python 3.7. We highly recommend using a similar setup for optimal performance. Additionally, to ensure a clean and isolated environment, we suggest utilizing a virtual Python environment. This tutorial will guide you through the setup process, including the creation of a virtual environment.
+This project has been tested on an Intel-based Mac OS using Python 3.7. We highly recommend using a similar setup for optimal performance. Additionally, to ensure a clean and isolated environment, we suggest utilizing a virtual Python environment. This tutorial will guide you through the setup process, including the creation of a virtual environment. Note that, to run the experiments on MacBook M1/M2, please follow the instructions given in: https://developer.apple.com/metal/tensorflow-plugin/ to install tensorflow.
 
 # Installation and Usage
 
@@ -27,7 +27,12 @@ source rnnenv/bin/activate
 pip install -r requirements.txt
 ```
 
-6. Test the installation by running any script within project. For instance, following will decompose a LSTM model, showing modularized accuracy, model accuracy, and jaccard index as a final summary of the run:
+7. Install required NLTK data by running the following script:
+```
+python3 -m util.install_nltk_data
+
+```
+9. Test the installation by running any script within project. For instance, following will decompose a LSTM model, showing modularized accuracy, model accuracy, and jaccard index as a final summary of the run:
 ```
 python3 -m lstm_models.one_to_one.decomposer_rolled
 ```
